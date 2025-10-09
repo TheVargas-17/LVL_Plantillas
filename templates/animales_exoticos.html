@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}  Plantilla Base{% endblock title %}
+
+{% block content %}
+<h1 class="mb-4 text-center">{{ title }}</h1>
+<p class="fs-5 text-center">{{ content }}</p>
+
+
+<h1 class="mt-5 mb-3 text-center text-white bg-primary rounded py-2">Animales Aéreos</h1>
+<div class="row">
+    <div class="col-md-6 border">
+        <h2>Guacamayo Azulamarillo</h2>
+        <p>
+            El **guacamayo azulamarillo** (*Ara ararauna*) es una de las aves tropicales más coloridas del mundo. 
+            Su plumaje combina tonos de azul, verde y amarillo brillante. Habita en selvas húmedas de América del Sur y Central.
+            Son aves muy **inteligentes y sociables**, capaces de imitar sonidos y palabras. Su dieta incluye frutas, semillas y nueces.
+        </p>
+        <div id="carouselGuacamayo" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/img/animales_exoticos/guacamayo1.jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Guacamayo azulamarillo">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/img/animales_exoticos/guacamayo2.jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Guacamayo en vuelo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 border">
+        <h2>Colibrí Esmeralda</h2>
+        <p>
+            El **colibrí esmeralda** (*Chlorostilbon canivetii*) es una diminuta ave conocida por su rapidez y su brillante plumaje verde metálico. 
+            Puede batir sus alas más de 50 veces por segundo y volar en todas direcciones, incluso hacia atrás. 
+            Se alimenta principalmente del néctar de las flores y cumple un papel importante en la **polinización**.
+        </p>
+        <div id="carouselColibri" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/img/animales_exoticos/colibri1.jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Colibrí esmeralda">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/img/animales_exoticos/colibri2.jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Colibrí alimentándose">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="mt-5 mb-3 text-center text-white bg-primary rounded py-2">Animales Terrestres</h1>
+<div class="row">
+    <div class="col-md-6 border">
+        <h2>Okapi</h2>
+        <p>
+            El **okapi** (*Okapia johnstoni*) es un mamífero africano pariente cercano de la jirafa. 
+            Tiene un cuerpo de color marrón oscuro con rayas blancas en las patas, similares a las de una cebra. 
+            Vive en los bosques tropicales del Congo y es un animal solitario y muy tímido. 
+            Su lengua larga y azulada le ayuda a alcanzar hojas y frutas.
+        </p>
+        <div id="carouselOkapi" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/img/animales_exoticos/okipi (1).jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Okapi en su hábitat">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/img/animales_exoticos/okipi (2).jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Okapi comiendo hojas">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 border">
+        <h2>Tapir Malayo</h2>
+        <p>
+            El **tapir malayo** (*Tapirus indicus*) es el tapir más grande del mundo y el único nativo de Asia. 
+            Se reconoce por su distintiva coloración en blanco y negro. 
+            Vive en selvas tropicales del sudeste asiático y pasa mucho tiempo en el agua para mantenerse fresco. 
+            Es un **herbívoro** que se alimenta de hojas, ramas y frutas.
+        </p>
+        <div id="carouselTapir" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/img/animales_exoticos/tapir (1).jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Tapir Malayo">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/img/animales_exoticos/tapir (2).jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Tapir Malayo en la selva">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="mt-5 mb-3 text-center text-white bg-primary rounded py-2">Animales Acuáticos</h1>
+<div class="row">
+    <div class="col-md-6 border">
+        <h2>Pez Mandarín</h2>
+        <p>
+            El **pez mandarín** (*Synchiropus splendidus*) es uno de los peces más coloridos del océano, 
+            con tonos vibrantes de azul, naranja y verde. Habita en los arrecifes de coral del Pacífico occidental. 
+            Es muy apreciado por los acuaristas debido a su belleza, aunque es difícil de mantener por su dieta especializada basada en pequeños crustáceos.
+        </p>
+        <div id="carouselMandarin" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/img/animales_exoticos/mandarin (1).jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Pez mandarín">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/img/animales_exoticos/mandarin (2).jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Pez mandarín entre corales">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 border">
+        <h2>Dragón de Mar Foliado</h2>
+        <p>
+            El **dragón de mar foliado** (*Phycodurus eques*) es un pez marino relacionado con el caballito de mar. 
+            Su cuerpo está cubierto de apéndices que parecen hojas, lo que le da un camuflaje perfecto entre las algas marinas. 
+            Vive en las aguas templadas del sur de Australia y se alimenta de pequeños crustáceos y plancton.
+        </p>
+        <div id="carouselDragon" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/img/animales_exoticos/dragon de mar (1).jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Dragón de mar foliado">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/img/animales_exoticos/dragon de mar (2).jpeg" class="d-block w-100" style="object-fit: contain; max-height: 250px;" alt="Dragón de mar nadando">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
