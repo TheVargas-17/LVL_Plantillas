@@ -5,5 +5,6 @@
 4. Grupo:5-D
 5. Especialidad: Programacion
 6. Escuela: Cetis 61
-7. 
-8. 
+7. ## Fotografia
+8. <img width="1536" height="2048" alt="image" src="https://github.com/user-attachments/assets/abaedb41-1da2-4cd5-a4f5-1558506a5d6d" />
+
