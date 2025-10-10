@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 
 
-@app.route('/inicio')
-def inicio():
+@app.route('/')
+def home():
     return render_template('inicio.html')
 
 @app.route('/animales-exoticos')
@@ -26,11 +26,14 @@ def maravillas_del_mundo():
     contenido = "Esta es la parte en donde encontraras informacion acerca de las maravillas del mundo mas interesantes del mundo."
     return render_template('maravillas_del_mundo.html', title='Maravillas del Mundo', content=contenido)
 
+
+
+
 @app.route('/acerca')
 def acerca_():
     
     contenido = "Aqui econtraras infromacion personal acerca del creador de esta pagina web."
-    return render_template('acerca.html', title='Acerca de', content=contenido)
+    return render_template('acerca_.html', title='Acerca de', content=contenido)
 
 if __name__ == '__main__':
     app.run(debug=True)
