@@ -1,4 +1,5 @@
-Alumnno
+## informacion del alumno
+
 1. Nombre: Leonartdo vargas lopez
 2. Numero control: 23308060610434
 3. Correo electronico: 23308060610434@cetis61.edu.mx
