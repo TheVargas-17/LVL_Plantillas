@@ -6,18 +6,26 @@ from flask  import Flask, render_template,url_for,request,redirect,flash
 app = Flask(__name__)
 
 
+@app.route('/inicioSE')
+def index():
+    """Ruta de inicio. Redirige a login."""
+    return redirect(url_for('inicioSesion'))
 
-@app.route("/inicioSesion", methods = ("GET","POST"))
-def inicioSesion ():
-    error = None
-    if request.method == "POST":
-        nombre = request.form["nombre"] 
-        email = request.form["email"]
-        contraseña = request.form["password"]
-        confirmarContraseña = request.form["confirmarContraseña"]
-        fechaNacimiento = request.form["fechaNacimiento"]
-        genero = request.form["genero"]
-        
+@app.route('/inicioS', methods=['GET', 'POST'])
+def inicioSesion():
+    """Ruta para la página de Inicio de Sesión."""
+    if request.method == 'POST':
+        email = request.form.get('email_inicioSesion')
+        contraseña = request.form.get('contraseña_inicioSesion')
+
+        if email == "test@correo.com" and contraseña == "1234":
+            flash('¡Bienvenido! Has iniciado sesión correctamente.', 'success')
+            return redirect(url_for('inicio'))
+        else:
+            flash('Fallo al iniciar sesión. Verifica tu correo y contraseña.', 'danger')
+
+    return render_template('inicioSesion.html', title='Iniciar Sesión')
+
         
         
         
@@ -54,12 +62,7 @@ def acerca_():
     return render_template('acerca_.html', title='Acerca de', content=contenido)
 
 
-@app.route('/registro')
-def registro ():
-    return render_template('registro.html')
-@app.route('/registrando')
-def registro ():
-    return render_template('registro.html')
+
         
         
         
