@@ -1,137 +1,168 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Básico Bootstrap</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
+Registro.html
 
-    <div class="container mt-2">
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-4"> 
-                
-                <div class="card shadow rounded-5 p-3">
-                    <div class="card-body">
-                        
-                        <h4 class="card-title text-center mb-3">Crea una cuenta nueva</h4>
-                        
-                        <form action="#" method="POST">
-                            
-                            <div class="row">
-                <div class="col-md-6">
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
-                        </div>
+{% extends "base.html" %}
 
-                        <div class="col-md-6 mb-2">
-                        <input type="text" class="form-control" id="apellido" placeholder="Apellidos" required>
-             </div>
-</div>
-                            
-                        </div>
-                        <div class="row justify-content-between">
-                        <div class="mb-2 ">
-                        <label for="carros">Fecha de Nacimiento</label>
-                             </div>
-                                <select id="dias" name="Dias" class="col-md-3">
-                             <option value="dia1">1</option>
-                             <option value="dia2">2</option>
-                                <option value="dia3">3</option>
-                            <option value="dia4">4</option>
-                        
-                            </select>
-                               
-                             
-                                <select id="meses" name="Meses" class="col-md-3">
-                             <option value="mes1">Enero</option>
-                             <option value="mes2">Febrero</option>
-                                <option value="mes3">Marzo</option>
-                            <option value="mes4">Abril</option>
-                            </select>
-                              
+{% block title %}Registro{% endblock title %}
 
-                               
-                       
-                                <select id="año" name="Año" class="col-md-3">
-                             <option value="volvo">2025</option>
-                             <option value="saab">2024</option>
-                                <option value="fiat">2023</option>
-                            <option value="audi">2022</option>
-                            </select>
-                        </div>  
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
-
-
-
-
-
-                            <div class="mb-2">
-                             <label for="genero" class="form-label"> Genero </label>
-                             </div>
-
-
-
-                            <div class="d-flex justify-content-between">
-        <div class="mb-3 form-check me-3">
-            <input type="checkbox" class="form-check-input" id="Hombre">
-            <label class="form-check-label" for="Hombre">Hombre</label>
+<div class="d-flex justify-content-center align-items-center" style="padding-top: 30px; padding-bottom: 30px;">
+    <div class="card p-3 shadow-lg" style="width: 420px; border-radius: 8px;">
+        
+        <div class="card-header text-center border-0 bg-white">
+            <h4 class="mb-1">Crea una cuenta</h4>
+            <p class="text mb-0">Es rápido y fácil.</p>
         </div>
-        <div class="mb-3 form-check me-3">
-            <input type="checkbox" class="form-check-input" id="Mujer">
-            <label class="form-check-label" for="Mujer">Mujer</label>
-     </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="Personalizado">
-            <label class="form-check-label" for="Personalizado">Personalizado</label>
-    </div>
-</div>
 
-
-                            <div class="mb-2">
-                                <input type="text" class="form-control" id="text" placeholder="Correo electronico o numero telefonico" required>
-                            </div>
-
-                            
-                             <div class="mb-2"></div>
-                           
-                         <div class="mb-2">
-                                                            <label for="contraseña" class="form-label"> Crea una contraseña </label>
-
-                                <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" required>
-                                <input type="password" class="form-control" id="confirmarContraseña" placeholder="confirmarContraseña" required>
-
-
-                            <div class="mb-3 mt-4">
-    <p class="text-secondary" style="font-size: 13px;">
-        Al hacer clic en "Crear cuenta nueva", aceptas nuestras 
-        Condiciones la 
-        Política de datos y la 
-        Política de cookies
-        Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.
-    </p>
-</div>
-
-<div class="d-grid mb-2">
-    <button type="button" class="btn btn-success">Registrarse</button>
-</div>
-
-<div class="text-center">
-    <a href="#" class="text-decoration-none" style="font-size: 14px;">¿Ya tienes una cuenta? Iniciar sesión.</a>
-</div>
-                        </form>
-                        
+        <div class="card-body pt-0">
+            <form method="POST">
+                <div class="row g-2 mb-3">
+                    <div class="col">
+                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required minlength="3" maxlength="50">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" required minlength="3" maxlength="50">
                     </div>
                 </div>
-            </div>
+                
+                <div class="mb-3">
+                    <input type="email" id="contacto" name="contacto" class="form-control" placeholder="Correo electrónico" required minlength="3" maxlength="50">
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña nueva" required minlength="3" maxlength="50">
+                </div>
+
+                <div class="mb-3">
+                    <input type="Password" id="confirmaContraseña" name="confirmaContraseña" class="form-control" placeholder="Confirmacion de contraseña" required minlength="3" maxlength="50">
+                </div>
+                
+                <label class="form-label text-start d-block fw-bold fs-6">Fecha de Nacimiento</label>
+                <div class="row">
+                        <div class="col-4">
+                            <select class="form-select" required>
+                                <option value="" disabled selected>Día</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                    <div class="col-4">
+                            <select class="form-select" required>
+                                <option value="" disabled selected>Mes</option>
+                                <option value="1">Enero</option>
+                                <option value="2">Febrero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                        </div>
+                    <div class="col-4">
+                            <select class="form-select" required>
+                                <option value="" disabled selected>Año</option>
+                                <option value="2000">2000</option>
+                                <option value="2001">2001</option>
+                                <option value="2002">2002</option>
+                                <option value="2003">2003</option>
+                                <option value="2004">2004</option>
+                                <option value="2005">2005</option>
+                                <option value="2006">2006</option>
+                                <option value="2007">2007</option>
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                </div>
+
+                <label class="form-label text-start d-block fw-bold fs-6">Género</label>
+                <div class="d-flex justify-content-between mb-3">
+                    <div class="form-check border p-2 flex-grow-1 me-2 rounded">
+                        <input type="radio" name="genero" value="Mujer" id="mujer" class="form-check-input float-end" required>
+                        <label class="form-check-label w-100 text-start" for="mujer">Mujer</label>
+                    </div>
+                    <div class="form-check border p-2 flex-grow-1 me-2 rounded">
+                        <input type="radio" name="genero" value="Hombre" id="hombre" class="form-check-input float-end">
+                        <label class="form-check-label w-100 text-start" for="hombre">Hombre</label>
+                    </div>
+                    <div class="form-check border p-2 flex-grow-1 rounded">
+                        <input type="radio" name="genero" value="Personalizado" id="personalizado" class="form-check-input float-end">
+                        <label class="form-check-label w-100 text-start" for="personalizado">Personalizado</label>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="small">
+                        Al hacer clic en "Registrarte", aceptas nuestras
+                        <a href="#">Condiciones</a>, la
+                        <a href="#">Política de privacidad</a> y la
+                        <a href="#">Política de cookies</a>.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg btn-success w-50 mt-1">Registrarte</button>
+                    <a href="{{ url_for('inicioSesion') }}" class="btn btn-lg btn-light w-100 mt-3 text-primary" role="button">¿Ya tienes una cuenta?</a>
+                </div>
+            </form>
         </div>
     </div>
-
-    <footer class="row justify-content-between">
-        <p>Esta pagina fue creada por Leonardo Vargas Lopez</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+</div>
+{% endblock content %}
