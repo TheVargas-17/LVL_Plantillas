@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Básico Bootstrap</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4"> 
+                
+                <div class="card shadow rounded-5 p-3">
+                    <div class="card-body">
+                        
+                        <h4 class="card-title text-center mb-3">Crea una cuenta nueva</h4>
+                        
+                        <form action="#" method="POST">
+                            
+                            <div class="row">
+                <div class="col-md-6">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellidos" required>
+             </div>
+</div>
+                            
+                        </div>
+                        <div class="row justify-content-between">
+                        <div class="mb-2 ">
+                        <label for="carros">Fecha de Nacimiento</label>
+                             </div>
+                                <select id="dias" name="Dias" class="col-md-3">
+                             <option value="dia1">1</option>
+                             <option value="dia2">2</option>
+                                <option value="dia3">3</option>
+                            <option value="dia4">4</option>
+                        
+                            </select>
+                               
+                             
+                                <select id="meses" name="Meses" class="col-md-3">
+                             <option value="mes1">Enero</option>
+                             <option value="mes2">Febrero</option>
+                                <option value="mes3">Marzo</option>
+                            <option value="mes4">Abril</option>
+                            </select>
+                              
+
+                               
+                       
+                                <select id="año" name="Año" class="col-md-3">
+                             <option value="volvo">2025</option>
+                             <option value="saab">2024</option>
+                                <option value="fiat">2023</option>
+                            <option value="audi">2022</option>
+                            </select>
+                        </div>  
+
+
+
+
+
+
+                            <div class="mb-2">
+                             <label for="genero" class="form-label"> Genero </label>
+                             </div>
+
+
+
+                            <div class="d-flex justify-content-between">
+        <div class="mb-3 form-check me-3">
+            <input type="checkbox" class="form-check-input" id="Hombre">
+            <label class="form-check-label" for="Hombre">Hombre</label>
+        </div>
+        <div class="mb-3 form-check me-3">
+            <input type="checkbox" class="form-check-input" id="Mujer">
+            <label class="form-check-label" for="Mujer">Mujer</label>
+     </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="Personalizado">
+            <label class="form-check-label" for="Personalizado">Personalizado</label>
+    </div>
+</div>
+
+
+                            <div class="mb-2">
+                                <input type="text" class="form-control" id="text" placeholder="Correo electronico o numero telefonico" required>
+                            </div>
+
+                            
+                             <div class="mb-2"></div>
+                           
+                         <div class="mb-2">
+                                                            <label for="contraseña" class="form-label"> Crea una contraseña </label>
+
+                                <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" required>
+                                <input type="password" class="form-control" id="confirmarContraseña" placeholder="confirmarContraseña" required>
+
+
+                            <div class="mb-3 mt-4">
+    <p class="text-secondary" style="font-size: 13px;">
+        Al hacer clic en "Crear cuenta nueva", aceptas nuestras 
+        Condiciones la 
+        Política de datos y la 
+        Política de cookies
+        Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.
+    </p>
+</div>
+
+<div class="d-grid mb-2">
+    <button type="button" class="btn btn-success">Registrarse</button>
+</div>
+
+<div class="text-center">
+    <a href="#" class="text-decoration-none" style="font-size: 14px;">¿Ya tienes una cuenta? Iniciar sesión.</a>
+</div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="row justify-content-between">
+        <p>Esta pagina fue creada por Leonardo Vargas Lopez</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

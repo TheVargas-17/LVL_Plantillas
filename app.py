@@ -1,9 +1,27 @@
-from flask  import Flask, render_template
+
+
+from flask  import Flask, render_template,url_for,request,redirect,flash
+
 
 app = Flask(__name__)
 
 
 
+@app.route("/inicioSesion", methods = ("GET","POST"))
+def inicioSesion ():
+    error = None
+    if request.method == "POST":
+        nombre = request.form["nombre"] 
+        email = request.form["email"]
+        contraseña = request.form["password"]
+        confirmarContraseña = request.form["confirmarContraseña"]
+        fechaNacimiento = request.form["fechaNacimiento"]
+        genero = request.form["genero"]
+        
+        
+        
+        
+        
 @app.route('/')
 def home():
     return render_template('inicio.html')
@@ -35,5 +53,26 @@ def acerca_():
     contenido = "Aqui econtraras infromacion personal acerca del creador de esta pagina web."
     return render_template('acerca_.html', title='Acerca de', content=contenido)
 
+
+@app.route('/registro')
+def registro ():
+    return render_template('registro.html')
+@app.route('/registrando')
+def registro ():
+    return render_template('registro.html')
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+   
