@@ -40,7 +40,27 @@ def maravillas_del_mundo():
 @app.route('/acerca')
 def acerca_():
     contenido = "Aqui econtraras infromacion personal acerca del creador de esta pagina web."
+
     return render_template('acerca_.html', title='Acerca de', content=contenido)
 
+
+
+
+
+
+
+@app.route('/registroh', methods=['GET', 'POST'])
+def registro():
+    if request.method == 'POST':
+        email = request.form.get('email_inicioSesion')
+        contraseña = request.form.get('contraseña_inicioSesion')
+
+        if email == "test@correo.com" and contraseña == "1234":
+            flash('¡Bienvenido! Has iniciado sesión correctamente.', 'success')
+            return redirect(url_for('home'))  # 🔁 Cambiado 'inicio' por 'home'
+        else:
+            flash('Fallo al iniciar sesión. Verifica tu correo y contraseña.', 'danger')
+
+    return render_template('registro.html', title='Iniciar Sesión')
 if __name__ == '__main__':
     app.run(debug=True)
