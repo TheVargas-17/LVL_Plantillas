@@ -4,24 +4,24 @@
 {% block title %}Registro{% endblock title %}
 
 {% block content %}
-{% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        {% for category, message in messages %}
-            <div class="alert alert-{{ category }}">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
+
 
 <div class="d-flex justify-content-center align-items-center" style="padding-top: 30px; padding-bottom: 30px;">
     <div class="card p-3 shadow-lg" style="width: 420px; border-radius: 8px;">
         
         <div class="card-header text-center border-0 bg-white">
             <h4 class="mb-1">Crea una cuenta nueva</h4>
-            
-        </div>
-
-        
-
+        {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger'if category =='eror' else category }} alert-dismissible fade show " role ="alert">
+                {{ message }}
+            <button type="button" class ="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+            {% endfor %}
+    {% endif %}
+{% endwith %}
+ </div>
 
 
 
@@ -37,11 +37,11 @@
                 </div>
                 
                 <div class="mb-3">
-                    <input type="email" id="contacto" name="contacto" class="form-control" placeholder="Correo electrónico" required minlength="3" maxlength="50">
+                    <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required minlength="3" maxlength="50">
                 </div>
 
                 <div class="mb-3">
-                    <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña nueva" required minlength="3" maxlength="50">
+                    <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Contraseña nueva" required minlength="3" maxlength="50">
                 </div>
 
                 <div class="mb-3">
@@ -163,6 +163,8 @@
                 <div class="text-center">
                     <button type="submit" class="btn btn-lg btn-success w-50 mt-1">Registrarte</button>
                     <a href="{{ url_for('inicioSesion') }}" class="btn btn-lg btn-light w-100 mt-3 text-primary" role="button">¿Ya tienes una cuenta?</a>
+                
+                
                 </div>
             </form>
         </div>

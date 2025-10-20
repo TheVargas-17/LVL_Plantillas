@@ -12,7 +12,7 @@ def inicioSesion():
 
         if email == "test@correo.com" and contraseña == "1234":
             flash('¡Bienvenido! Has iniciado sesión correctamente.', 'success')
-            return redirect(url_for('home'))  # 🔁 Cambiado 'inicio' por 'home'
+            return redirect(url_for('home')) 
         else:
             flash('Fallo al iniciar sesión. Verifica tu correo y contraseña.', 'danger')
 
@@ -52,14 +52,23 @@ def acerca_():
 @app.route('/registroh', methods=['GET', 'POST'])
 def registro():
     if request.method == 'POST':
-        email = request.form.get('email_inicioSesion')
-        contraseña = request.form.get('contraseña_inicioSesion')
-
-        if email == "test@correo.com" and contraseña == "1234":
-            flash('¡Bienvenido! Has iniciado sesión correctamente.', 'success')
-            return redirect(url_for('home'))  # 🔁 Cambiado 'inicio' por 'home'
+       
+        correo = request.form.get('correo_registro')
+        contraseña = request.form.get('contraseña_registro')
+        confirmarContraseña = request.form.get('confirmarContraseña_registro')
+        
+        if contraseña != confirmarContraseña:
+            flash('contraseña incorrecta', 'danger')
+            return redirect(url_for('registro')) 
+        
+        
+        if correo == "test@correo.com":
+            flash('correo incorrecto', 'danger')
+            return redirect(url_for('registro')) 
+        
+        
         else:
-            flash('Fallo al iniciar sesión. Verifica tu correo y contraseña.', 'danger')
+            flash('tu registro a sido exitoso', 'succes')
 
     return render_template('registro.html', title='Iniciar Sesión')
 if __name__ == '__main__':
