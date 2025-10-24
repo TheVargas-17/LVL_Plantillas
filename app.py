@@ -4,11 +4,11 @@ app = Flask(__name__)
 app.secret_key = '12345'  # 🔑 Necesario para usar flash()
 
 @app.route('/inicioS', methods=['GET', 'POST'])
-def inicioSesion():
-    """Ruta para la página de Inicio de Sesión."""
+def login():
+
     if request.method == 'POST':
-        email = request.form.get('email_inicioSesion')
-        contraseña = request.form.get('contraseña_inicioSesion')
+        email = request.form.get('email_login')
+        contraseña = request.form.get('contraseña_login')
 
         if email == "test@correo.com" and contraseña == "1234":
             flash('¡Bienvenido! Has iniciado sesión correctamente.', 'success')
@@ -16,7 +16,7 @@ def inicioSesion():
         else:
             flash('Fallo al iniciar sesión. Verifica tu correo y contraseña.', 'danger')
 
-    return render_template('inicioSesion.html', title='Iniciar Sesión')
+    return render_template('login.html', title='Iniciar Sesión')
 
 @app.route('/')
 def home():
